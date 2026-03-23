@@ -1,0 +1,2609 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tora Gardens – Thika's premier garden dining experience. Savour exquisite cuisine in a serene, open-air sanctuary. Book your table today.">
+<meta name="keywords" content="Tora Gardens, Thika restaurant, garden dining, Kenyan cuisine, outdoor restaurant, Thika Kenya">
+<meta property="og:title" content="Tora Gardens | Garden Dining in Thika, Kenya">
+<meta property="og:description" content="Where nature meets cuisine. Experience tranquil garden dining with farm-to-table flavours in the heart of Thika.">
+<meta name="theme-color" content="#1a3d2b">
+<title>Tora Gardens | Garden Dining · Thika, Kenya</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+/* ─── CSS Variables ─── */
+:root {
+  --green-deep: #1a3d2b;
+  --green-mid: #2d6a4f;
+  --green-light: #52b788;
+  --amber: #d4a853;
+  --amber-dark: #b8872a;
+  --cream: #f5f0e8;
+  --cream-dark: #ede6d5;
+  --soil: #2c1a0e;
+  --text-dark: #1c1208;
+  --text-mid: #3d3020;
+  --text-light: #7a6a55;
+
+  --bg: #f5f0e8;
+  --bg2: #ede6d5;
+  --card: #ffffff;
+  --nav-bg: rgba(245,240,232,0.92);
+  --text: #1c1208;
+  --text2: #3d3020;
+  --text3: #7a6a55;
+  --border: rgba(28,18,8,0.12);
+  --shadow: 0 8px 40px rgba(28,18,8,0.12);
+  --radius: 20px;
+  --radius-sm: 10px;
+  --transition: 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+[data-theme="dark"] {
+  --bg: #0e1a12;
+  --bg2: #131f17;
+  --card: #1a2e20;
+  --nav-bg: rgba(14,26,18,0.94);
+  --text: #f0ead8;
+  --text2: #c8bfa8;
+  --text3: #9a907a;
+  --border: rgba(240,234,216,0.12);
+  --shadow: 0 8px 40px rgba(0,0,0,0.4);
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.5s, color 0.5s;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+ul { list-style: none; }
+
+/* ─── Typography ─── */
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+.josefin { font-family: 'Josefin Sans', sans-serif; }
+.section-tag {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--amber);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.section-tag::before, .section-tag::after {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--amber);
+}
+
+/* ─── Utility ─── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--amber);
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 50px;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(212,168,83,0.35);
+}
+.btn-primary:hover {
+  background: var(--amber-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212,168,83,0.5);
+}
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid var(--text);
+  color: var(--text);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 13px 30px;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+.btn-outline:hover {
+  background: var(--text);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+@keyframes slideRight { from { width: 0; } to { width: 100%; } }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── Noise Texture Overlay ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ─── Navbar ─── */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.4s ease;
+}
+#navbar.scrolled {
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 12px 0;
+  box-shadow: 0 2px 30px rgba(0,0,0,0.08);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.logo-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--text);
+  transition: color 0.3s;
+}
+#navbar:not(.scrolled) .logo-main { color: #fff; }
+.logo-sub {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-links a {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 50px;
+  transition: var(--transition);
+  color: var(--text);
+}
+#navbar:not(.scrolled) .nav-links a { color: rgba(255,255,255,0.85); }
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--amber);
+  color: #fff !important;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: var(--transition);
+  background: var(--card);
+  color: var(--text);
+}
+#navbar:not(.scrolled) .theme-btn {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.3);
+  color: #fff;
+}
+.theme-btn:hover { transform: rotate(20deg) scale(1.1); }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+}
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Mobile Nav */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--green-deep);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.mobile-nav.open { transform: translateX(0); }
+.mobile-nav a {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #fff;
+  font-style: italic;
+  transition: color 0.3s;
+}
+.mobile-nav a:hover { color: var(--amber); }
+
+/* ─── Hero ─── */
+#hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--green-deep);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0d2818 0%, #1a3d2b 40%, #2d6a4f 100%);
+}
+/* Decorative leaves */
+.hero-leaves {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.leaf {
+  position: absolute;
+  opacity: 0.08;
+  font-size: 8rem;
+  animation: float 6s ease-in-out infinite;
+}
+.leaf:nth-child(1) { top: 10%; right: 5%; animation-delay: 0s; font-size: 10rem; }
+.leaf:nth-child(2) { top: 60%; right: 15%; animation-delay: 2s; font-size: 5rem; }
+.leaf:nth-child(3) { bottom: 10%; left: 10%; animation-delay: 1s; font-size: 7rem; }
+.leaf:nth-child(4) { top: 30%; left: 5%; animation-delay: 3s; font-size: 4rem; }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212,168,83,0.2);
+  border: 1px solid rgba(212,168,83,0.4);
+  color: var(--amber);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 50px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease both;
+}
+.hero-badge::before {
+  content: '●';
+  font-size: 0.5rem;
+  animation: pulse 2s ease infinite;
+}
+.hero-title {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s 0.1s ease both;
+}
+.hero-title em { color: var(--amber); font-style: italic; }
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 40px;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: var(--green-deep);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+.btn-white:hover { background: var(--amber); color: #fff; transform: translateY(-2px); }
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 13px 30px;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+.hero-stats {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  animation: fadeUp 0.8s 0.5s ease both;
+}
+.hero-stats-inner {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.stat {
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--amber);
+  line-height: 1;
+}
+.stat-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-top: 4px;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  animation: fadeUp 0.8s 0.6s ease both;
+  writing-mode: vertical-rl;
+}
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--amber), transparent);
+  animation: slideRight 2s ease infinite;
+}
+
+/* ─── About ─── */
+#about { padding: 120px 0; }
+.about-text h2 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--text2);
+  margin-bottom: 20px;
+}
+.about-img-wrap {
+  position: relative;
+}
+.about-img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+}
+.about-img-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+}
+.about-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: var(--amber);
+  color: #fff;
+  padding: 20px 24px;
+  border-radius: var(--radius-sm);
+  font-family: 'Playfair Display', serif;
+  box-shadow: 0 8px 30px rgba(212,168,83,0.4);
+}
+.about-badge .num { font-size: 2.5rem; font-weight: 900; line-height: 1; }
+.about-badge .txt { font-size: 0.85rem; font-style: italic; }
+.values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.value-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  transition: var(--transition);
+}
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--amber);
+}
+.value-icon { font-size: 1.5rem; margin-bottom: 8px; }
+.value-title { font-family: 'Josefin Sans', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); margin-bottom: 4px; }
+.value-desc { font-size: 0.9rem; color: var(--text3); line-height: 1.5; }
+
+/* ─── Menu ─── */
+#menu { padding: 120px 0; background: var(--bg2); }
+.menu-header { text-align: center; margin-bottom: 48px; }
+.menu-header h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+.menu-header p { color: var(--text3); font-size: 1.05rem; max-width: 500px; margin: 0 auto; }
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+.menu-tab {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: 1.5px solid var(--border);
+  color: var(--text2);
+  transition: var(--transition);
+}
+.menu-tab:hover, .menu-tab.active {
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+  color: #fff;
+}
+[data-theme="dark"] .menu-tab:hover,
+[data-theme="dark"] .menu-tab.active {
+  background: var(--green-light);
+  border-color: var(--green-light);
+  color: #fff;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+.menu-section { display: none; }
+.menu-section.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+.menu-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  position: relative;
+}
+.menu-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.menu-card-img {
+  height: 180px;
+  background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.menu-card-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, var(--card), transparent);
+}
+.menu-card-body { padding: 20px; }
+.menu-card-name { font-size: 1.2rem; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+.menu-card-desc { font-size: 0.9rem; color: var(--text3); line-height: 1.5; margin-bottom: 14px; }
+.menu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--amber);
+}
+.menu-tag {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 50px;
+  background: rgba(212,168,83,0.15);
+  color: var(--amber);
+  border: 1px solid rgba(212,168,83,0.3);
+}
+
+/* ─── Gallery ─── */
+#gallery { padding: 120px 0; }
+.gallery-header { text-align: center; margin-bottom: 48px; }
+.gallery-header h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 250px);
+  gap: 16px;
+}
+.gallery-item {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.gallery-item:nth-child(2) { grid-column: span 2; }
+.gallery-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  transition: transform 0.5s ease;
+}
+.gallery-item:nth-child(1) .gallery-inner { background: linear-gradient(135deg, #1a3d2b, #2d6a4f); }
+.gallery-item:nth-child(2) .gallery-inner { background: linear-gradient(135deg, #2c1a0e, #5c3a1e); }
+.gallery-item:nth-child(3) .gallery-inner { background: linear-gradient(135deg, #1e3a5f, #2d6a8f); }
+.gallery-item:nth-child(4) .gallery-inner { background: linear-gradient(135deg, #3d2c1a, #6b4a2a); }
+.gallery-item:nth-child(5) .gallery-inner { background: linear-gradient(135deg, #1a1a3d, #2d2d6a); }
+.gallery-item:hover .gallery-inner { transform: scale(1.05); }
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay span {
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ─── Testimonials ─── */
+#testimonials { padding: 120px 0; background: var(--green-deep); }
+.testimonials-header { text-align: center; margin-bottom: 64px; }
+.testimonials-header h2 { font-size: clamp(2rem, 4vw, 3rem); color: #fff; margin-bottom: 16px; }
+.testimonials-header p { color: rgba(255,255,255,0.6); font-size: 1.05rem; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+.testimonial-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: var(--transition);
+  position: relative;
+}
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: var(--amber);
+  opacity: 0.3;
+  line-height: 1;
+}
+.testimonial-card:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(212,168,83,0.4);
+  transform: translateY(-4px);
+}
+.testimonial-stars { color: var(--amber); font-size: 0.9rem; margin-bottom: 16px; }
+.testimonial-text {
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.author-name { font-family: 'Josefin Sans', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; color: #fff; }
+.author-meta { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+.google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  padding: 5px 12px;
+  border-radius: 50px;
+  margin-top: 8px;
+}
+
+/* ─── Events ─── */
+#events { padding: 120px 0; background: var(--bg2); }
+.events-header { text-align: center; margin-bottom: 64px; }
+.events-header h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+.events-header p { color: var(--text3); font-size: 1.05rem; }
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+.event-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+.event-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.event-header {
+  padding: 28px;
+  background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+  position: relative;
+  min-height: 120px;
+  display: flex;
+  align-items: flex-end;
+}
+.event-date {
+  background: var(--amber);
+  color: #fff;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.event-date .day { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; line-height: 1; }
+.event-date .month { font-family: 'Josefin Sans', sans-serif; font-size: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.event-emoji { font-size: 2rem; }
+.event-body { padding: 24px; }
+.event-type {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+.event-name { font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+.event-desc { font-size: 0.9rem; color: var(--text3); line-height: 1.5; margin-bottom: 16px; }
+.event-info {
+  display: flex;
+  gap: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7rem;
+  color: var(--text3);
+  letter-spacing: 0.05em;
+}
+
+/* ─── Reservations ─── */
+#reservations { padding: 120px 0; }
+.reservation-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.res-info h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 20px; }
+.res-info p { color: var(--text2); font-size: 1.05rem; line-height: 1.8; margin-bottom: 32px; }
+.res-features { display: flex; flex-direction: column; gap: 16px; }
+.res-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.res-feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(212,168,83,0.15);
+  border: 1px solid rgba(212,168,83,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.res-feature-text .title { font-family: 'Josefin Sans', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 2px; }
+.res-feature-text .desc { font-size: 0.9rem; color: var(--text3); }
+
+/* ─── AI Chatbot ─── */
+.chatbot-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.chatbot-header {
+  background: var(--green-deep);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.bot-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.bot-info .name { font-family: 'Josefin Sans', sans-serif; font-size: 0.85rem; font-weight: 600; color: #fff; }
+.bot-info .status { font-size: 0.7rem; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 5px; }
+.bot-info .status::before { content: '●'; color: #4caf50; font-size: 0.5rem; }
+.chat-messages {
+  height: 320px;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scroll-behavior: smooth;
+}
+.chat-messages::-webkit-scrollbar { width: 4px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.chat-msg {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  animation: fadeUp 0.3s ease;
+}
+.chat-msg.bot {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  color: var(--text);
+}
+.chat-msg.user {
+  background: var(--green-mid);
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.chat-msg.loading {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 14px;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text3);
+  animation: pulse 1.2s ease infinite;
+}
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+.chat-suggestions {
+  padding: 0 20px 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.suggestion {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  color: var(--text2);
+  padding: 6px 12px;
+  border-radius: 50px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.suggestion:hover { border-color: var(--amber); color: var(--amber); }
+.chat-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid var(--border);
+}
+.chat-input {
+  flex: 1;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 10px 18px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.3s;
+}
+.chat-input:focus { border-color: var(--amber); }
+.chat-input::placeholder { color: var(--text3); }
+.chat-send {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--amber);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.chat-send:hover { background: var(--amber-dark); transform: scale(1.05); }
+
+/* ─── Contact ─── */
+#contact { padding: 120px 0; background: var(--bg2); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
+}
+.contact-info h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 20px; }
+.contact-info p { color: var(--text2); font-size: 1.05rem; line-height: 1.8; margin-bottom: 40px; }
+.contact-items { display: flex; flex-direction: column; gap: 24px; }
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+.contact-item:hover .contact-icon { background: var(--amber); transform: scale(1.05); }
+.contact-item-text .label { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text3); margin-bottom: 4px; }
+.contact-item-text .val { font-size: 1rem; color: var(--text); font-weight: 500; }
+.social-links { display: flex; gap: 12px; margin-top: 40px; }
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: var(--transition);
+  color: var(--text);
+}
+.social-link:hover { background: var(--amber); border-color: var(--amber); color: #fff; transform: translateY(-3px); }
+
+/* ─── Form ─── */
+.contact-form-wrap {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 40px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.contact-form-wrap h3 { font-size: 1.6rem; margin-bottom: 24px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 20px; }
+.form-label {
+  display: block;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 8px;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: var(--bg2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 4px rgba(212,168,83,0.1);
+}
+.form-textarea { resize: vertical; min-height: 100px; }
+.form-select { appearance: none; cursor: pointer; }
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px;
+}
+.form-success .success-icon { font-size: 3rem; margin-bottom: 16px; }
+.form-success h4 { font-size: 1.5rem; margin-bottom: 8px; }
+.form-success p { color: var(--text3); }
+
+/* ─── Map Placeholder ─── */
+.map-wrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 200px;
+  background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  margin-top: 32px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.map-wrap:hover { transform: scale(1.01); }
+.map-wrap .map-pin { font-size: 3rem; margin-bottom: 8px; }
+.map-wrap .map-label { font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.8; }
+
+/* ─── Blog ─── */
+#blog { padding: 120px 0; }
+.blog-header { text-align: center; margin-bottom: 64px; }
+.blog-header h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+.blog-header p { color: var(--text3); font-size: 1.05rem; }
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+}
+.blog-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+.blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.blog-card-img {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+.blog-card:nth-child(1) .blog-card-img { background: linear-gradient(135deg, #1a3d2b, #2d6a4f); }
+.blog-card:nth-child(2) .blog-card-img { background: linear-gradient(135deg, #2c1a0e, #5c3a1e); }
+.blog-card:nth-child(3) .blog-card-img { background: linear-gradient(135deg, #1a1a3d, #2d4f6a); }
+.blog-card-body { padding: 24px; }
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.blog-cat {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: rgba(212,168,83,0.12);
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+.blog-date {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7rem;
+  color: var(--text3);
+}
+.blog-title { font-size: 1.2rem; margin-bottom: 10px; color: var(--text); line-height: 1.3; }
+.blog-excerpt { font-size: 0.9rem; color: var(--text3); line-height: 1.6; margin-bottom: 20px; }
+.blog-link {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.3s;
+}
+.blog-link:hover { gap: 10px; }
+
+/* ─── Newsletter ─── */
+.newsletter-bar {
+  background: var(--amber);
+  padding: 60px 0;
+}
+.newsletter-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.newsletter-text h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #fff; margin-bottom: 6px; }
+.newsletter-text p { color: rgba(255,255,255,0.8); font-size: 1rem; }
+.newsletter-form { display: flex; gap: 8px; flex: 1; max-width: 440px; }
+.newsletter-input {
+  flex: 1;
+  background: rgba(255,255,255,0.2);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: #fff;
+  outline: none;
+}
+.newsletter-input::placeholder { color: rgba(255,255,255,0.6); }
+.newsletter-input:focus { border-color: #fff; }
+.newsletter-btn {
+  background: #fff;
+  color: var(--amber-dark);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 50px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.newsletter-btn:hover { background: var(--soil); color: #fff; transform: scale(1.03); }
+
+/* ─── Footer ─── */
+footer {
+  background: var(--soil);
+  color: rgba(255,255,255,0.7);
+  padding: 80px 0 32px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+.footer-brand .footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.footer-brand .footer-tagline {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+}
+.footer-brand p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 24px; }
+.footer-social { display: flex; gap: 10px; }
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+.footer-social a:hover { background: var(--amber); border-color: var(--amber); transform: translateY(-3px); }
+.footer-col h4 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul li a {
+  font-size: 0.9rem;
+  transition: color 0.3s, padding-left 0.3s;
+  display: block;
+}
+.footer-col ul li a:hover { color: #fff; padding-left: 6px; }
+.footer-hours p { font-size: 0.85rem; margin-bottom: 8px; }
+.footer-hours strong { color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-copy { font-size: 0.8rem; }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 0.8rem; transition: color 0.3s; }
+.footer-links a:hover { color: #fff; }
+
+/* ─── Sticky Floating Action ─── */
+.fab {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+.fab-main {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--amber);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 8px 24px rgba(212,168,83,0.5);
+  transition: var(--transition);
+}
+.fab-main:hover { transform: scale(1.1) rotate(10deg); }
+.fab-mini {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+.fab:hover .fab-mini { opacity: 1; transform: scale(1); pointer-events: all; }
+.fab-mini:hover { background: var(--green-deep); color: #fff; border-color: var(--green-deep); }
+
+/* ─── Rating Stars ─── */
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 10px 18px;
+  border-radius: 50px;
+  width: fit-content;
+  margin: 0 auto 32px;
+}
+.rating-display .stars { color: #fbbc04; }
+.rating-display .score {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+.rating-display .count {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ─── Section Divider ─── */
+.wave-divider { overflow: hidden; line-height: 0; }
+.wave-divider svg { display: block; }
+
+/* ─── Lightbox ─── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.lightbox.active { opacity: 1; pointer-events: all; }
+.lightbox-content {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  font-size: 6rem;
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: auto; }
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .reservation-wrap { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-stats-inner { gap: 24px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .newsletter-inner { flex-direction: column; }
+  .newsletter-form { width: 100%; }
+  .values { grid-template-columns: 1fr; }
+  .about-badge { bottom: 10px; left: 10px; }
+  .fab { bottom: 20px; right: 20px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+@media (max-width: 480px) {
+  section { padding: 80px 0; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item:nth-child(1) { grid-column: span 1; }
+  .gallery-item:nth-child(2) { grid-column: span 1; }
+  .hero-scroll { display: none; }
+}
+
+/* ─── Special decorations ─── */
+.ornament {
+  text-align: center;
+  color: var(--amber);
+  opacity: 0.4;
+  font-size: 1.5rem;
+  letter-spacing: 8px;
+  margin: 20px 0;
+}
+
+/* Hours indicator */
+.hours-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(76,175,80,0.15);
+  border: 1px solid rgba(76,175,80,0.3);
+  color: #4caf50;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 50px;
+}
+.hours-indicator::before { content: '●'; font-size: 0.5rem; animation: pulse 2s ease infinite; }
+</style>
+</head>
+<body>
+
+<!-- ─── Navbar ─── -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="logo">
+        <span class="logo-main">Tora Gardens</span>
+        <span class="logo-sub">Thika · Kenya · Est. 2020</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#events" class="nav-link">Events</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <a href="#reservations" class="btn-primary" style="padding:10px 22px; font-size:0.7rem;">Book a Table</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#menu" class="mobile-link">Menu</a>
+  <a href="#gallery" class="mobile-link">Gallery</a>
+  <a href="#events" class="mobile-link">Events</a>
+  <a href="#reservations" class="mobile-link">Reservations</a>
+  <a href="#blog" class="mobile-link">Blog</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+
+<!-- ─── Hero ─── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-leaves">
+    <div class="leaf">🌿</div>
+    <div class="leaf">🍃</div>
+    <div class="leaf">🌱</div>
+    <div class="leaf">🌾</div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hours-indicator">Open Until 11pm</span>
+        &nbsp;&nbsp;Garden Dining · Thika, Kenya
+      </div>
+      <h1 class="hero-title">
+        Where Nature<br>Meets <em>Cuisine</em>
+      </h1>
+      <p class="hero-subtitle">
+        Amongst Thika's first garden-estate restaurants, Tora Gardens offers a tranquil sanctuary where cool open air, lush greenery, and exceptional Kenyan cuisine unite for an unforgettable experience.
+      </p>
+      <div class="hero-actions">
+        <a href="#reservations" class="btn-white">🌿 Reserve Your Table</a>
+        <a href="#menu" class="btn-ghost">View Our Menu →</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="container">
+      <div class="hero-stats-inner">
+        <div class="stat">
+          <div class="stat-num">4.2★</div>
+          <div class="stat-label">Google Rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">73+</div>
+          <div class="stat-label">Happy Reviews</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">11pm</div>
+          <div class="stat-label">Daily Closing</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Garden Dining</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ─── About ─── -->
+<section id="about">
+  <div class="container">
+    <div class="grid-2">
+      <div class="about-img-wrap reveal">
+        <div class="about-img">
+          <div class="about-img-inner">🌿</div>
+        </div>
+        <div class="about-badge">
+          <div class="num">5+</div>
+          <div class="txt">Years of Excellence</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-tag reveal">Our Story</div>
+        <h2 class="reveal reveal-delay-1">A Pioneer of Garden<br><em>Estate Dining</em></h2>
+        <p class="reveal reveal-delay-2">
+          Tora Gardens was born from a simple yet revolutionary vision: to bring the luxury of open-air, garden-estate dining to the heart of Thika. As one of the first restaurants of its kind within a residential estate, we reimagined what dining out could truly feel like.
+        </p>
+        <p class="reveal reveal-delay-2">
+          Our serene environment — infused with cool, crisp air and lush greenery — brings tranquility while you dine. Whether it's an outing with close friends, a family celebration, or a quiet afternoon escape, Tora Gardens is where memories are made.
+        </p>
+        <div class="values reveal reveal-delay-3">
+          <div class="value-card">
+            <div class="value-icon">🌱</div>
+            <div class="value-title">Fresh Ingredients</div>
+            <div class="value-desc">Locally sourced produce for every dish, every day.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🌿</div>
+            <div class="value-title">Garden Ambiance</div>
+            <div class="value-desc">Open-air seating in our lush, tranquil estate garden.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">👨‍🍳</div>
+            <div class="value-title">Expert Chef</div>
+            <div class="value-desc">A passionate kitchen team that loves what they cook.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">👨‍👩‍👧</div>
+            <div class="value-title">Family Friendly</div>
+            <div class="value-desc">Space and facilities for kids to play and enjoy.</div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-4" style="margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="#reservations" class="btn-primary">Book a Table 🌿</a>
+          <a href="#contact" class="btn-outline">Get Directions →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Menu ─── -->
+<section id="menu">
+  <div class="container">
+    <div class="menu-header reveal">
+      <div class="section-tag" style="justify-content:center;">Our Cuisine</div>
+      <h2>Explore the <em>Menu</em></h2>
+      <p>From farm-fresh accompaniments to succulent grilled meats — there's something for every palate at Tora Gardens.</p>
+    </div>
+    <div class="menu-tabs reveal">
+      <button class="menu-tab active" data-tab="mains">🍖 Main Meals</button>
+      <button class="menu-tab" data-tab="sides">🌽 Accompaniments</button>
+      <button class="menu-tab" data-tab="beverages">☕ Beverages</button>
+      <button class="menu-tab" data-tab="snacks">🥚 Snacks</button>
+    </div>
+
+    <!-- Mains -->
+    <div class="menu-section active" id="tab-mains">
+      <div class="menu-card reveal">
+        <div class="menu-card-img">🐔</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Full Kienyeji Chicken</div>
+          <div class="menu-card-desc">A whole free-range farmyard chicken, seasoned and grilled to perfection. The pride of our kitchen.</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">KES 1,600</span>
+            <span class="menu-tag">Chef's Special</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#2c1a0e,#5c3a1e)">🐔</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">½ Kienyeji Chicken</div>
+          <div class="menu-card-desc">Half a free-range kienyeji chicken, tender and aromatic. Perfect for a satisfying solo meal.</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">KES 900</span>
+            <span class="menu-tag">Popular</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#3d2c1a,#6b4a2a)">🐔</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">¼ Kienyeji Chicken</div>
+          <div class="menu-card-desc">A quarter serving of our beloved kienyeji chicken. Great as a light meal or a side protein.</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">KES 400</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a1a3d,#2d2d6a)">🍗</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Full Broiler</div>
+          <div class="menu-card-desc">A whole broiler chicken, juicy and golden. A feast for the table to share.</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">KES 1,200</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#2c2c0e,#5c5c1e)">🍗</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">½ Broiler</div>
+          <div class="menu-card-desc">Half a broiler chicken — great value, great flavour. Served hot off the grill.</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">KES 600</span>
+            <span class="menu-tag">Value</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#3d1a1a,#6b2a2a)">🥩</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">1kg Mbuzi (Goat)</div>
+          <div class="menu-card-desc">A kilogram of slow-cooked goat meat, rich in flavour and deeply satisfying. A Kenyan classic.</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">KES 1,200</span>
+            <span class="menu-tag">Signature</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1e3a1a,#2a6a2a)">🥓</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">1kg Pork</div>
+          <div class="menu-card-desc">A full kilogram of succulent pork, a favourite among regulars. Ask about our pork rib specials too.</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">KES 1,100</span>
+            <span class="menu-tag">Fan Favourite</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a2c3d,#2a4a6a)">🐟</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Whole Tilapia</div>
+          <div class="menu-card-desc">A whole fresh tilapia, grilled or fried to your preference. Fresh, light, and delicious.</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">KES 700</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sides -->
+    <div class="menu-section" id="tab-sides">
+      <div class="menu-card reveal">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a3d2b,#2d6a4f);font-size:3rem">🌽</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Mukimo</div>
+          <div class="menu-card-desc">Traditional Kenyan mashed potatoes mixed with greens and corn. Comfort food at its finest.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 200</span><span class="menu-tag">Traditional</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#3d2c0e,#6b4a1a);font-size:3rem">🍚</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Ugali</div>
+          <div class="menu-card-desc">Kenya's staple maize meal, perfectly cooked. The ideal partner for any protein.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 90</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#3d1a1a,#6a2a2a);font-size:3rem">🥗</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Kachumbari</div>
+          <div class="menu-card-desc">Fresh tomato and onion salad, lightly seasoned with lime. Crisp, vibrant, and refreshing.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 80</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a3d1a,#2d6a2d);font-size:3rem">🥦</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Seasoned Vegetables</div>
+          <div class="menu-card-desc">A garden-fresh medley of seasonal vegetables, lightly spiced and sautéed.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 70</span><span class="menu-tag">Vegan</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#2c1a0e,#5c3a1e);font-size:3rem">🍚</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Rice</div>
+          <div class="menu-card-desc">Fluffy, perfectly steamed rice. Simple, versatile, and always satisfying.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 150</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#2c2c0e,#5c5c1e);font-size:3rem">🫓</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Chapati</div>
+          <div class="menu-card-desc">Soft, layered flatbread made fresh daily. A beloved Kenyan staple for every meal.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 70</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#3d3d0e,#6a6a1a);font-size:3rem">🍟</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Chips / Chips Masala</div>
+          <div class="menu-card-desc">Golden crispy fries — plain or tossed in our signature masala spice blend. Irresistible.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 200 / 250</span><span class="menu-tag">Popular</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a2c3d,#2a4a6a);font-size:3rem">🥔</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Potato Wedges</div>
+          <div class="menu-card-desc">Thick-cut, seasoned potato wedges. Crispy outside, soft inside — guests can't get enough.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 200</span><span class="menu-tag">Fan Favourite</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beverages -->
+    <div class="menu-section" id="tab-beverages">
+      <div class="menu-card reveal">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#2c1a0e,#5c3a1e);font-size:3rem">☕</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Coffee / Tea</div>
+          <div class="menu-card-desc">A perfectly brewed cup of Kenyan coffee or classic tea — warm, comforting, and rich.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 70</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a2c3d,#2a4a5c);font-size:3rem">🍵</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Tea Masala / Special Tea</div>
+          <div class="menu-card-desc">Aromatic spiced chai brewed with ginger, cardamom, and cinnamon. A warming delight.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 100</span><span class="menu-tag">Signature</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a3d2b,#2d6a4f);font-size:3rem">🍹</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Delmonte / Minutes Maid</div>
+          <div class="menu-card-desc">Premium fruit juice drinks — tropical, refreshing, and full of flavour. Straight from the chiller.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 300–350</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#2c2c1a,#5c5c3a);font-size:3rem">🍫</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Chocolate / Milo</div>
+          <div class="menu-card-desc">Rich chocolate Milo, hot or cold. A treat for kids and adults alike.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 100</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a1a3d,#2d2d6a);font-size:3rem">🥤</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Soda / Lemon Tea / Dawa</div>
+          <div class="menu-card-desc">Chilled sodas, tangy lemon tea, or the classic Kenyan cold remedy — Dawa with honey and ginger.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 60–100</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a3a3d,#2d6a6a);font-size:3rem">🍶</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Porridge / Milk</div>
+          <div class="menu-card-desc">Wholesome uji porridge or fresh farm milk — nourishing breakfast and snack options.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 100</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Snacks -->
+    <div class="menu-section" id="tab-snacks">
+      <div class="menu-card reveal">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#3d2c0e,#6b4a1a);font-size:3rem">🥚</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">2 Eggs (Fried/Boiled)</div>
+          <div class="menu-card-desc">Two farm-fresh eggs, your way. Quick, protein-rich, and satisfying at any hour.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 100</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#3d1a0e,#6b2a1a);font-size:3rem">🍳</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Omelette</div>
+          <div class="menu-card-desc">A fluffy, well-seasoned egg omelette. Ask for veggies or cheese on the side.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 120</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#2c2c1a,#5c5c3a);font-size:3rem">🥞</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Pancakes</div>
+          <div class="menu-card-desc">Soft, golden pancakes — delightful with honey or jam. A perfect morning treat.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 100</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a3d2b,#2d6a4f);font-size:3rem">🥟</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Samosa / Andazi / Sausage</div>
+          <div class="menu-card-desc">Crispy savoury samosas, fluffy andazi doughnuts, or grilled sausage. Perfect on-the-go snacks.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 50–60</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a2c1a,#2d4a2d);font-size:3rem">🌿</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Ngwaci / Nduma / Banana</div>
+          <div class="menu-card-desc">Boiled sweet potato, arrow root, or banana — wholesome traditional Kenyan bites.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 100</span><span class="menu-tag">Traditional</span></div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#2c1a2c,#5a3a5a);font-size:3rem">🍞</div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Toasted Bread</div>
+          <div class="menu-card-desc">Perfectly golden toasted bread — simple, warm, and comforting alongside your morning brew.</div>
+          <div class="menu-card-footer"><span class="menu-price">KES 50</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Gallery ─── -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <div class="section-tag" style="justify-content:center;">Our World</div>
+      <h2>Experience Tora <em>Gardens</em></h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" onclick="openLightbox('🌿', 'Our Lush Garden')">
+        <div class="gallery-inner">🌿</div>
+        <div class="gallery-overlay"><span>The Garden</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('🍗', 'Grilled Kienyeji Chicken')">
+        <div class="gallery-inner">🍗</div>
+        <div class="gallery-overlay"><span>Kienyeji Special</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('🥓', 'Succulent Pork')">
+        <div class="gallery-inner">🥓</div>
+        <div class="gallery-overlay"><span>Pork Delight</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('☕', 'Beverages & More')">
+        <div class="gallery-inner">☕</div>
+        <div class="gallery-overlay"><span>Beverages</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('🌅', 'Evening Ambiance')">
+        <div class="gallery-inner">🌅</div>
+        <div class="gallery-overlay"><span>Evening Vibes</span></div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px;" class="reveal">
+      <a href="https://www.facebook.com/toragardens" target="_blank" class="btn-outline">View Full Gallery on Facebook →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Testimonials ─── -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <div class="section-tag" style="justify-content:center; --amber:#d4a853;">
+        <span style="color:var(--amber); font-family:'Josefin Sans',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; display:flex; align-items:center; gap:10px;">
+          <span style="width:30px;height:1px;background:var(--amber);display:inline-block;"></span>
+          What People Say
+          <span style="width:30px;height:1px;background:var(--amber);display:inline-block;"></span>
+        </span>
+      </div>
+      <h2>Loved by Our <em style="color:var(--amber)">Community</em></h2>
+      <p>Real words from real guests who've tasted the Tora Gardens difference.</p>
+      <div class="rating-display">
+        <span class="stars">★★★★☆</span>
+        <span class="score">4.2</span>
+        <span class="count">73 Google Reviews</span>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I haven't met the chef but I can tell they love cooking. I joined some friends for a meal and heh… I just wish I hadn't eaten earlier. The service was also very friendly. The green grass and wide open spaces make this a beautiful spot."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MK</div>
+          <div>
+            <div class="author-name">Mwangi Kirubi</div>
+            <div class="author-meta">Local Guide · 223 reviews</div>
+            <div class="google-badge">📍 Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Great customer service, nice food especially the pork and potato wedges. Best place to be. The atmosphere is just perfect for a relaxed evening out."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">BM</div>
+          <div>
+            <div class="author-name">Bridget Mbenyi</div>
+            <div class="author-meta">Dine-in · Dinner · KES 2,000–2,500</div>
+            <div class="google-badge">📍 Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Perfect experience in the perfect neighbourhood. The pork is just amazing. The serene environment brings a sense of calm you rarely find near town. Keep up the good work!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">NM</div>
+          <div>
+            <div class="author-name">Nicholas Mwaura</div>
+            <div class="author-meta">2 years ago</div>
+            <div class="google-badge">📍 Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Awesome reception and friendly service. The place has a beautiful, serene ambiance that makes you feel right at home. Perfect for the whole family. Will definitely be back!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SM</div>
+          <div>
+            <div class="author-name">Stanley Mwania</div>
+            <div class="author-meta">Local Guide · 163 reviews · 1,515 photos</div>
+            <div class="google-badge">📍 Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Best place to hang out as a family. It has ample space and facilities for kids to play. The food is excellent and the environment makes you want to stay all day long."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">FL</div>
+          <div>
+            <div class="author-name">Festus Lee</div>
+            <div class="author-meta">Local Guide · 33 reviews · Dine-in</div>
+            <div class="google-badge">📍 Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"It was a very nice place to visit with friends and family. A truly peaceful escape from the noise of Thika town. The food was fantastic and the staff are warm and welcoming."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JM</div>
+          <div>
+            <div class="author-name">Jecinta Mwaniki</div>
+            <div class="author-meta">Dine-in · Lunch · KES 2,500–3,000</div>
+            <div class="google-badge">📍 Google Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;" class="reveal">
+      <a href="https://maps.google.com" target="_blank" class="btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.3);">Read All 73 Reviews on Google →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Events ─── -->
+<section id="events">
+  <div class="container">
+    <div class="events-header reveal">
+      <div class="section-tag" style="justify-content:center;">What's On</div>
+      <h2>Upcoming <em>Events</em></h2>
+      <p>From family weekends to live music nights — there's always something happening at Tora Gardens.</p>
+    </div>
+    <div class="events-grid">
+      <div class="event-card reveal">
+        <div class="event-header">
+          <div class="event-emoji">🎶</div>
+          <div class="event-date">
+            <div class="day">29</div>
+            <div class="month">Mar</div>
+          </div>
+        </div>
+        <div class="event-body">
+          <div class="event-type">Live Entertainment</div>
+          <div class="event-name">Live Acoustic Night</div>
+          <div class="event-desc">Unwind under the stars with soulful live acoustic music. Perfect for a romantic evening or a relaxed night out with friends.</div>
+          <div class="event-info">
+            <span>🕗 7:00 PM – 11:00 PM</span>
+            <span>🎟 Free Entry</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card reveal reveal-delay-1">
+        <div class="event-header" style="background:linear-gradient(135deg,#2c1a0e,#5c3a1e)">
+          <div class="event-emoji">🍖</div>
+          <div class="event-date">
+            <div class="day">05</div>
+            <div class="month">Apr</div>
+          </div>
+        </div>
+        <div class="event-body">
+          <div class="event-type">Food Festival</div>
+          <div class="event-name">Nyama Choma Weekend</div>
+          <div class="event-desc">A celebration of Kenya's most beloved tradition — nyama choma on the open grill, cold drinks, and great company all weekend long.</div>
+          <div class="event-info">
+            <span>🕐 12:00 PM – 10:00 PM</span>
+            <span>📅 Sat & Sun</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card reveal reveal-delay-2">
+        <div class="event-header" style="background:linear-gradient(135deg,#1a1a3d,#2d2d6a)">
+          <div class="event-emoji">👨‍👩‍👧</div>
+          <div class="event-date">
+            <div class="day">12</div>
+            <div class="month">Apr</div>
+          </div>
+        </div>
+        <div class="event-body">
+          <div class="event-type">Family Day</div>
+          <div class="event-name">Easter Family Fiesta</div>
+          <div class="event-desc">Celebrate Easter with your loved ones in our lush garden. Kids' activities, egg hunts, and a special festive menu for the whole family.</div>
+          <div class="event-info">
+            <span>🕙 10:00 AM – 8:00 PM</span>
+            <span>🎊 Easter Special</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card reveal">
+        <div class="event-header" style="background:linear-gradient(135deg,#2c2c0e,#5c5c1e)">
+          <div class="event-emoji">🌅</div>
+          <div class="event-date">
+            <div class="day">19</div>
+            <div class="month">Apr</div>
+          </div>
+        </div>
+        <div class="event-body">
+          <div class="event-type">Weekend Special</div>
+          <div class="event-name">Sundowner Happy Hour</div>
+          <div class="event-desc">Every Saturday evening — special discounts on beverages, live DJ sets, and the most stunning golden-hour views in Thika.</div>
+          <div class="event-info">
+            <span>🕔 4:00 PM – 7:00 PM</span>
+            <span>🥤 Discounted Drinks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Reservations ─── -->
+<section id="reservations">
+  <div class="container">
+    <div class="reservation-wrap">
+      <div class="res-info reveal">
+        <div class="section-tag">Book a Table</div>
+        <h2>Reserve Your Garden <em>Experience</em></h2>
+        <p>Whether it's an intimate dinner, a family gathering, or a group celebration, we'll ensure your Tora Gardens experience is truly memorable.</p>
+        <div class="res-features">
+          <div class="res-feature">
+            <div class="res-feature-icon">📞</div>
+            <div class="res-feature-text">
+              <div class="title">Call Us Directly</div>
+              <div class="desc"><a href="tel:+254114685565" style="color:var(--amber)">+254 114 685565</a></div>
+            </div>
+          </div>
+          <div class="res-feature">
+            <div class="res-feature-icon">✉️</div>
+            <div class="res-feature-text">
+              <div class="title">Email Reservation</div>
+              <div class="desc"><a href="mailto:toragardens1@gmail.com" style="color:var(--amber)">toragardens1@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="res-feature">
+            <div class="res-feature-icon">🕐</div>
+            <div class="res-feature-text">
+              <div class="title">Opening Hours</div>
+              <div class="desc">Daily from 11:00 AM until 11:00 PM</div>
+            </div>
+          </div>
+          <div class="res-feature">
+            <div class="res-feature-icon">📍</div>
+            <div class="res-feature-text">
+              <div class="title">Location</div>
+              <div class="desc">Kahawa Avenue, Thika, Kenya</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Chat Reservation -->
+      <div class="chatbot-container reveal reveal-delay-1">
+        <div class="chatbot-header">
+          <div class="bot-avatar">🌿</div>
+          <div class="bot-info">
+            <div class="name">Tora Assistant</div>
+            <div class="status">AI Reservation Helper · Online Now</div>
+          </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-msg bot">
+            🌿 Welcome to Tora Gardens! I'm your reservation assistant. I can help you book a table, check availability, or answer any questions about our menu and events. How can I help you today?
+          </div>
+        </div>
+        <div class="chat-suggestions">
+          <button class="suggestion" onclick="sendSuggestion('Book a table for 4 this Saturday')">Book for 4 · Sat</button>
+          <button class="suggestion" onclick="sendSuggestion('What are your opening hours?')">Opening hours</button>
+          <button class="suggestion" onclick="sendSuggestion('Tell me about your menu')">Menu info</button>
+          <button class="suggestion" onclick="sendSuggestion('Do you have kids facilities?')">Kids friendly?</button>
+        </div>
+        <div class="chat-input-wrap">
+          <input type="text" class="chat-input" id="chatInput" placeholder="Type your message…" />
+          <button class="chat-send" onclick="sendChat()" aria-label="Send">➤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Contact ─── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="section-tag">Get In Touch</div>
+        <h2>We'd Love to<br><em>Hear From You</em></h2>
+        <p>Whether you have a question about our menu, want to plan a private event, or simply want to say hello — our team is always ready to assist.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-item-text">
+              <div class="label">Phone</div>
+              <div class="val"><a href="tel:+254114685565">+254 114 685565</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-item-text">
+              <div class="label">Email</div>
+              <div class="val"><a href="mailto:toragardens1@gmail.com">toragardens1@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-item-text">
+              <div class="label">Address</div>
+              <div class="val">Kahawa Avenue, Thika, Kenya</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div class="contact-item-text">
+              <div class="label">Hours</div>
+              <div class="val">Daily · 11:00 AM – 11:00 PM</div>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/toragardens" target="_blank" class="social-link" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/toragardens" target="_blank" class="social-link" aria-label="Instagram">📷</a>
+          <a href="tel:+254114685565" class="social-link" aria-label="Phone">📞</a>
+          <a href="https://wa.me/254114685565" target="_blank" class="social-link" aria-label="WhatsApp">💬</a>
+        </div>
+        <a href="https://maps.google.com/?q=Tora+Gardens+Thika+Kenya" target="_blank" class="map-wrap">
+          <div class="map-pin">📍</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:#fff;margin-bottom:4px;">Tora Gardens</div>
+          <div class="map-label">Kahawa Avenue, Thika · Click to open in Google Maps</div>
+        </a>
+      </div>
+
+      <div class="contact-form-wrap reveal reveal-delay-1">
+        <h3>Send Us a Message</h3>
+        <div id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input" placeholder="Your first name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input" placeholder="Your last name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="+254 ..." />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <select class="form-select form-input">
+              <option value="">Select a topic…</option>
+              <option>Table Reservation</option>
+              <option>Private Event Enquiry</option>
+              <option>Menu Question</option>
+              <option>Feedback</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea form-input" placeholder="Tell us how we can help…"></textarea>
+          </div>
+          <button class="btn-primary" onclick="submitForm()" style="width:100%;justify-content:center;">Send Message 🌿</button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">🌿</div>
+          <h4>Message Sent!</h4>
+          <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+          <button class="btn-primary" onclick="resetForm()" style="margin-top:16px;">Send Another</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Blog ─── -->
+<section id="blog">
+  <div class="container">
+    <div class="blog-header reveal">
+      <div class="section-tag" style="justify-content:center;">Stories & Updates</div>
+      <h2>From the Tora <em>Gardens Blog</em></h2>
+      <p>Recipes, stories, and news from our kitchen, garden, and community.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-card-img">🌿</div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span class="blog-cat">Food & Culture</span>
+            <span class="blog-date">March 2025</span>
+          </div>
+          <h3 class="blog-title">The Story Behind Our Kienyeji Chicken</h3>
+          <p class="blog-excerpt">From the farm to your plate — discover why our kienyeji chicken is the most talked-about dish in Thika, and the tradition behind every juicy bite.</p>
+          <span class="blog-link">Read More →</span>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-1">
+        <div class="blog-card-img">🍃</div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span class="blog-cat">Garden Life</span>
+            <span class="blog-date">February 2025</span>
+          </div>
+          <h3 class="blog-title">Why Dining Al Fresco Changes Everything</h3>
+          <p class="blog-excerpt">Science says eating outdoors reduces stress and boosts mood. We believe it. Here's how Tora Gardens has been designing the perfect open-air dining ritual since day one.</p>
+          <span class="blog-link">Read More →</span>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-2">
+        <div class="blog-card-img">🔥</div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span class="blog-cat">Events</span>
+            <span class="blog-date">January 2025</span>
+          </div>
+          <h3 class="blog-title">Our Best Nyama Choma Night Yet</h3>
+          <p class="blog-excerpt">A recap of our biggest nyama choma event — the smells, the laughter, the music, and the moment the whole community came together around the grill.</p>
+          <span class="blog-link">Read More →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Newsletter ─── -->
+<div class="newsletter-bar">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <h3>Stay in the Loop 🌿</h3>
+        <p>Get the latest events, specials, and garden updates delivered to your inbox.</p>
+      </div>
+      <div class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Enter your email address…" id="nlEmail" />
+        <button class="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Tora Gardens</div>
+        <div class="footer-tagline">Thika · Kenya · Est. 2020</div>
+        <p>Amongst the first ever bar and restaurant within an estate, bringing a luxurious, serene outdoor dining experience to the heart of Thika. Join us and taste the difference.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/toragardens" target="_blank" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/toragardens" target="_blank" aria-label="Instagram">📷</a>
+          <a href="https://wa.me/254114685565" target="_blank" aria-label="WhatsApp">💬</a>
+          <a href="tel:+254114685565" aria-label="Phone">📞</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#reservations">Reservations</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Menu Highlights</h4>
+        <ul>
+          <li><a href="#menu">Kienyeji Chicken</a></li>
+          <li><a href="#menu">Nyama Choma</a></li>
+          <li><a href="#menu">Pork & Ribs</a></li>
+          <li><a href="#menu">Tilapia Fish</a></li>
+          <li><a href="#menu">Potato Wedges</a></li>
+          <li><a href="#menu">Kenyan Beverages</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-hours">
+        <h4>Opening Hours</h4>
+        <p><strong>Monday – Sunday</strong></p>
+        <p>11:00 AM – 11:00 PM</p>
+        <br>
+        <h4 style="margin-top:0">Contact Us</h4>
+        <p><strong>Phone:</strong> <a href="tel:+254114685565" style="color:rgba(255,255,255,0.7)">0114 685565</a></p>
+        <p><strong>Email:</strong> <a href="mailto:toragardens1@gmail.com" style="color:rgba(255,255,255,0.7);word-break:break-all">toragardens1@gmail.com</a></p>
+        <p><strong>Location:</strong> Kahawa Ave, Thika, Kenya</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Tora Gardens. All rights reserved. · Made with 🌿 in Thika, Kenya</div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── Floating Action Button ─── -->
+<div class="fab">
+  <a href="https://wa.me/254114685565" target="_blank" class="fab-mini" title="WhatsApp">💬</a>
+  <a href="tel:+254114685565" class="fab-mini" title="Call Us">📞</a>
+  <a href="#reservations" class="fab-main" title="Book a Table">🌿</a>
+</div>
+
+<!-- ─── Lightbox ─── -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-content" id="lightboxContent" onclick="event.stopPropagation()">
+    <div id="lightboxEmoji" style="font-size:5rem;margin-bottom:16px"></div>
+    <div id="lightboxTitle" style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text)"></div>
+  </div>
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+</div>
+
+<script>
+// ─── Theme Toggle ───
+const themeBtn = document.getElementById('themeToggle');
+const html = document.documentElement;
+let dark = false;
+themeBtn.addEventListener('click', () => {
+  dark = !dark;
+  html.setAttribute('data-theme', dark ? 'dark' : 'light');
+  themeBtn.textContent = dark ? '☀️' : '🌙';
+});
+
+// ─── Navbar Scroll ───
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ─── Hamburger ───
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+});
+document.querySelectorAll('.mobile-link').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+  });
+});
+
+// ─── Scroll Reveal ───
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// ─── Active Nav Link ───
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+      });
+    }
+  });
+}, { threshold: 0.4 });
+sections.forEach(s => sectionObserver.observe(s));
+
+// ─── Menu Tabs ───
+document.querySelectorAll('.menu-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.menu-section').forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    const target = document.getElementById('tab-' + tab.dataset.tab);
+    if (target) {
+      target.classList.add('active');
+      // Re-trigger reveal for new items
+      target.querySelectorAll('.reveal').forEach(el => {
+        el.classList.remove('visible');
+        setTimeout(() => observer.observe(el), 10);
+      });
+    }
+  });
+});
+
+// ─── Gallery Lightbox ───
+function openLightbox(emoji, title) {
+  document.getElementById('lightboxEmoji').textContent = emoji;
+  document.getElementById('lightboxTitle').textContent = title;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// ─── Contact Form ───
+function submitForm() {
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+function resetForm() {
+  document.getElementById('contactForm').style.display = 'block';
+  document.getElementById('formSuccess').style.display = 'none';
+}
+
+// ─── Newsletter ───
+function subscribeNewsletter() {
+  const input = document.getElementById('nlEmail');
+  if (input.value && input.value.includes('@')) {
+    input.value = '';
+    input.placeholder = '✅ You\'re subscribed! Thank you.';
+    setTimeout(() => { input.placeholder = 'Enter your email address…'; }, 4000);
+  } else {
+    input.style.borderColor = '#e53e3e';
+    setTimeout(() => { input.style.borderColor = ''; }, 2000);
+  }
+}
+
+// ─── AI Chat Assistant ───
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+
+const knowledgeBase = {
+  booking: "🌿 Great! To book a table at Tora Gardens, you can:\n\n📞 Call us directly: **+254 114 685565**\n✉️ Email: toragardens1@gmail.com\n💬 WhatsApp: wa.me/254114685565\n\nOr tell me your preferred date, time, and number of guests and I'll note down your request!",
+  hours: "🕐 We're open **daily from 11:00 AM to 11:00 PM** — including weekends and public holidays. We're typically quieter in the mornings, and busiest on Friday and Saturday evenings!",
+  menu: "🍽️ Our menu includes:\n\n🐔 **Main Meals** — Kienyeji Chicken (KES 400–1,600), Broiler, Goat (Mbuzi), Pork (KES 550–1,100), and Fresh Tilapia (KES 700)\n\n🌽 **Accompaniments** — Mukimo, Ugali, Chapati, Chips, Potato Wedges, Rice, and more\n\n☕ **Beverages** — Tea, Coffee, Sodas, Fresh Juices, Dawa, and Milo\n\n🥚 **Snacks** — Eggs, Samosa, Andazi, Pancakes & more\n\nWould you like details on a specific dish?",
+  location: "📍 We're located on **Kahawa Avenue, Thika, Kenya**. We're within a residential estate — a serene escape from the noise of Thika town. You can find us on Google Maps by searching 'Tora Gardens Thika'.",
+  kids: "👨‍👩‍👧 Absolutely! Tora Gardens is very family-friendly. We have **open green spaces and play areas for kids**. Many families visit us on weekends — it's a perfect spot for the whole family to unwind together.",
+  pork: "🥓 Our pork is a firm favourite! We serve it by the kilogram — **½ kg for KES 550** or **1 kg for KES 1,100**. It's slow-cooked and seasoned beautifully. Pair it with Potato Wedges or Kachumbari for the full experience!",
+  chicken: "🐔 We have two types of chicken:\n\n**Kienyeji (Free-range):** Full KES 1,600 | Half KES 900 | Quarter KES 400\n**Broiler:** Full KES 1,200 | Half KES 600 | Quarter KES 300\n\nOur kienyeji chicken is especially loved — cooked with care and bursting with natural flavour!",
+  events: "🎉 We host regular events including **Live Acoustic Nights**, **Nyama Choma Weekends**, **Family Fun Days**, and **Sundowner Happy Hours** every Saturday. Check our Events section for upcoming dates!",
+  default: "🌿 That's a great question! For the most accurate info, feel free to **call us at +254 114 685565** or **email toragardens1@gmail.com**. Our team is happy to help. Is there anything else I can assist you with?"
+};
+
+function getResponse(msg) {
+  const m = msg.toLowerCase();
+  if (m.includes('book') || m.includes('reserv') || m.includes('table')) return knowledgeBase.booking;
+  if (m.includes('hour') || m.includes('open') || m.includes('time') || m.includes('close')) return knowledgeBase.hours;
+  if (m.includes('menu') || m.includes('food') || m.includes('eat') || m.includes('dish') || m.includes('meal')) return knowledgeBase.menu;
+  if (m.includes('location') || m.includes('where') || m.includes('find') || m.includes('address') || m.includes('direction')) return knowledgeBase.location;
+  if (m.includes('kid') || m.includes('child') || m.includes('family') || m.includes('play')) return knowledgeBase.kids;
+  if (m.includes('pork') || m.includes('nguruwe')) return knowledgeBase.pork;
+  if (m.includes('chicken') || m.includes('kuku') || m.includes('kienyeji') || m.includes('broiler')) return knowledgeBase.chicken;
+  if (m.includes('event') || m.includes('music') || m.includes('choma') || m.includes('party')) return knowledgeBase.events;
+  return knowledgeBase.default;
+}
+
+function addMessage(text, type) {
+  const div = document.createElement('div');
+  div.className = 'chat-msg ' + type;
+  div.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  return div;
+}
+
+function showLoading() {
+  const div = document.createElement('div');
+  div.className = 'chat-msg bot loading';
+  div.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  return div;
+}
+
+async function sendChat() {
+  const msg = chatInput.value.trim();
+  if (!msg) return;
+  chatInput.value = '';
+  addMessage(msg, 'user');
+  const loader = showLoading();
+  await new Promise(r => setTimeout(r, 900 + Math.random() * 600));
+  loader.remove();
+  addMessage(getResponse(msg), 'bot');
+}
+
+function sendSuggestion(text) {
+  chatInput.value = text;
+  sendChat();
+}
+
+chatInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') sendChat();
+});
+
+// ─── Smooth scroll for internal links ───
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
